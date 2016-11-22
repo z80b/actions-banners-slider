@@ -1,0 +1,23 @@
+.e-timer
+	display block
+	font 18px/1 'ProximaNova Light'
+	text-align center
+
+	&-item
+		display inline-block
+		padding 0
+		border-right solid 1px #fcd315
+		width 65px
+		box-sizing border-box
+		
+		&::after
+			content ' м'
+			
+		&:first-child::after
+			content ' ч'
+			
+		&:last-child
+			border-right none
+
+			&::after
+				content ' с'

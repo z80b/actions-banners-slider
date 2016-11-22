@@ -1,0 +1,41 @@
+.e-arrow
+    &-next
+    &-prev
+        position absolute
+        width 24px
+        height 46px
+        top 50%
+        color transparent
+        border none
+        background none
+        cursor pointer
+        transform translateY(-50%)
+        z-index 2
+        display block
+        outline none
+        
+        &::after
+        &::before
+            content ''
+            position absolute
+            left 3px
+            top 50%
+            height 35px
+            border-right 1px solid #fff
+            transform-origin left bottom
+            transform translateY(-100%) rotate(45deg)
+            transition left .1s, opacity .1s
+            opacity .5
+            
+        &:hover
+            &::after, &::before
+                left 0
+                opacity 1
+            
+        &:after
+            transform-origin left top
+            transform rotate(-45deg)
+            
+    &-next
+        left auto
+        transform translateY(-50%) rotateZ(180deg)

@@ -1,0 +1,129 @@
+.b-happy-hours        
+    position absolute
+    left 0
+    right 0
+    display block
+    background inline-image("../imgs/watermarks.png")
+    color #fff
+    height 340px
+    
+    &__wrapper
+        height 450px
+    
+    &__title
+        padding 45px 0 0
+        font 30px/1 "ProximaNova Regular"
+        text-align center
+        text-transform uppercase
+        letter-spacing 2.5px
+        
+        .e-promo-code
+            color #fcd315
+            
+    &__info
+        width 1206px
+        margin 0 auto
+        bottom -30px
+        position relative
+        color #aaa
+        
+    &__content
+        padding 50px 0
+        
+    &__timer
+        position absolute
+        top -35px
+        width 100%
+        color #fcd315
+        display none
+        
+        ../__slider-item--done &
+            color #888
+            
+    &__slider
+        font-size 0
+        white-space nowrap
+        overflow hidden
+        position relative
+        
+        &-track
+            transition .8s transform ease 
+            transform translateX(-320px)
+            padding 40px 0 0
+        
+        .e-arrow
+            left 50%
+            top 65%
+            
+            &-prev
+                margin-left -225px
+            
+            &-next
+                margin-left 205px
+        
+        &-item
+            position relative
+            font 16px/1 "ProximaNova Light"
+            display inline-block
+            background #fcd315
+            width 330px
+            height 150px
+            color #000
+            box-sizing border-box
+            border 5px solid transparent
+            margin 0 5px
+            white-space normal
+            transition .8s margin ease
+
+            &--active
+                margin 0 85px
+                
+            &--current
+                border 5px solid #fff
+                
+            &--done
+                background-color #595959
+            
+            &__left
+                width 127px
+                height 140px
+                line-height 140px
+                float left
+                text-align center
+                    
+            &__image
+                vertical-align middle
+                
+            &__right
+                height 100px
+                width 180px
+                margin 20px 0 20px 127px
+                padding 60px 25px 0
+                border-left 1px solid #b99f1f
+                box-sizing border-box
+                position relative
+            
+                ../--done &
+                    border-left 1px solid #474a4e
+                    
+                &::before, &::after
+                    font-family "ProximaNova Regular"
+                    
+                &::before
+                    content 'до'
+                    position absolute
+                    top 19px
+                    left 25px
+                    font-size 22px
+                    
+                &::after
+                    content attr(data-discount)
+                    position absolute
+                    font-size 45px
+                    top 10px
+                    left 55px
+                    
+                    
+                
+
+            
