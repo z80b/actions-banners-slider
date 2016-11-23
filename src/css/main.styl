@@ -16,6 +16,7 @@
         text-align center
         text-transform uppercase
         letter-spacing 2.5px
+        white-space nowrap
         
         .e-promo-code
             color #fcd315
@@ -23,12 +24,13 @@
     &__info
         width 1206px
         margin 0 auto
-        bottom -30px
+        padding 15px 0
+        bottom 0
         position relative
         color #aaa
         
     &__content
-        padding 50px 0
+        padding 50px 0 25px
         
     &__timer
         position absolute
@@ -47,19 +49,28 @@
         position relative
         
         &-track
-            transition .8s transform ease 
-            transform translateX(-320px)
             padding 40px 0 0
+            opacity 0
+            
+            ../--inited &
+                transition .8s transform ease, .3s opacity ease
+                opacity 1
+                
         
         .e-arrow
             left 50%
             top 65%
+            opacity 0
             
             &-prev
-                margin-left -225px
+                margin-left -227px
             
             &-next
-                margin-left 205px
+                margin-left 193px
+                
+        &--inited
+            .e-arrow
+                opacity 1
         
         &-item
             position relative
@@ -73,9 +84,9 @@
             border 5px solid transparent
             margin 0 5px
             white-space normal
-            transition .8s margin ease
+            transition .8s all ease
 
-            &--active
+            &[data-status='active']
                 margin 0 85px
                 
             &--current
