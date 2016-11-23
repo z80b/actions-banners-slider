@@ -1,6 +1,5 @@
 mixin slider-item(discount, startTime, endTime, status)
-    - var statusClass = status ? 'b-happy-hours__slider-item--' + status : '';
-    .b-happy-hours__slider-item(data-starttime= startTime, data-endtime= endTime, class= statusClass)
+    a.b-happy-hours__slider-item(herf="/" data-starttime= startTime, data-endtime= endTime, data-status= status)
         .b-happy-hours__slider-item__left
             img.b-happy-hours__slider-item__image(src!="/files/icon-01.png")
         .b-happy-hours__slider-item__right(data-discount="#{discount}%")
